@@ -1,0 +1,21 @@
+
+
+<form id="form_id" action="/bands" method="post" class="form-horizontal">
+  <label for="name">Enter the band name:</label></b>
+  <input type="text" name="name" placeholder="e.g. Pixies">
+  <button name="button" class= btn-btn-sm-primary>Enter</button>
+</form>
+
+<br>
+
+<h4>Here are the bands that you've added thus far:</h4>
+
+<% if @bands.any?() %>
+<ul>
+  <% @bands.each() do |band| %>
+  <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p> You have not created a band yet. Get going</p>
+<% end %>

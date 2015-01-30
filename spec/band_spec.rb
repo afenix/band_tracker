@@ -10,7 +10,7 @@ describe(Band) do
     end
 
     it("will ensure that users will enter a band name into the form") do
-      band = Band.create({:name => ""})
+      band = Band.new({:name => ""})
       expect(band.save()).to(eq(false))
     end
 end
