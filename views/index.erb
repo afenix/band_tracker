@@ -1,9 +1,15 @@
 
-
 <form id="form_id" action="/bands" method="post" class="form-horizontal">
-  <label for="name">Enter the band name:</label></b>
-  <input type="text" name="name" placeholder="e.g. Pixies">
-  <button name="button" class= btn-btn-sm-primary>Enter</button>
+  <div class="form-group">
+    <label for="name">Enter a band name:</label></b>
+    <input type="text" name="name" placeholder="e.g. Pixies">
+    <button name="button" class="btn-btn-sm-primary">Enter</button>
+  </div>
+  <div class="form-group">
+    <label for="venue">Enter a venue name:</label></b>
+    <input type="text" name="venue" placeholder="e.g. Red Rocks Amphitheatre">
+    <button name="button" class="btn-btn-sm-primary">Enter</button>
+  </div>
 </form>
 
 <br>
@@ -18,4 +24,5 @@
 </ul>
 <% else %>
 <p> You have not created a band yet. Get going</p>
+
 <% end %>

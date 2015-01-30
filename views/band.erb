@@ -1,1 +1,19 @@
-<h3>You've chosen to edit <%= band.name() %></h3>
+<h3>You've chosen to edit <strong><%= @band.name() %></strong></h3>
+
+<form action="/bands/<%= @band.id() %>/edit" method="post" class="form-group">
+  <input type="hidden" name="_method" value="patch">
+  <label for="name">Edit the band name:</label>
+  <input id="name" name="name" type="text">
+  <button name="button" class="btn-btn-sm-primary">Edit</button>
+</form>
+
+
+<form  action="/bands/<%= @band.id() %>/edit" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button name="delete" class= "btn-btn-xs btn-danger">Delete Band</button>
+
+</form>
+
+<br>
+
+<a href="/"><== Go Back</a>

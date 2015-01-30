@@ -1,0 +1,8 @@
+<h3>Ruh oh.  There appears to be a problem here....</h3>
+<ul>
+  <% @band.errors().full_messages().each() do |message| %>
+  <%= message %>
+  <% end %>
+</ul>
+<br>
+<h5><a href='/'>If at first you don't succeed...Start again!</a></h5>
