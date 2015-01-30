@@ -9,4 +9,10 @@ describe(Venue) do
     venue = Venue.create({:name => "the arlene schnitzer concert hall"})
     expect(venue.name()).to(eq("The Arlene Schnitzer Concert Hall"))
   end
+
+  it("will ensure that the user enters a name for the venue in the form") do
+    venue = Venue.new({:name => ""})
+    expect(venue.save()).to(eq(false))
+  end
+
 end
