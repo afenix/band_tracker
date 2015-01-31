@@ -35,4 +35,11 @@
 </div>
 <br>
 
+<h4>Here are the venue's that this band has played at:</h4>
+<% @band.venues().each() do |venue| %>
+  <ul>
+    <li><%= venue.name() %> </li>
+  </ul>
+<% end %>
+
 <a href="/"><== Go Back</a>
