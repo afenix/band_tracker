@@ -1,19 +1,22 @@
-<h3>You've chosen to edit <strong><%= @band.name() %></strong></h3>
-
-<form action="/bands/<%= @band.id() %>/edit" method="post" class="form-group">
-  <input type="hidden" name="_method" value="patch">
-  <label for="name">Edit the band name:</label>
-  <input id="name" name="name" type="text">
-  <button name="button" class="btn-btn-sm-primary">Edit</button>
+<form action="/bands" method="post" class="form-horizontal">
+  <div class="form-group">
+    <label for="name">Enter a band name:</label></b>
+    <input type="text" name="name" placeholder="e.g. Pixies">
+    <button name="button" class="btn-btn-sm-primary">Enter</button>
+  </div>
 </form>
 
+<h4>Here are the bands that you've added thus far:</h4>
+<% if @bands.any?() %>
+<ul>
+  <% @bands.each() do |band| %>
+  <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p> You have not created a band yet. Get going.</p>
 
-<form  action="/bands/<%= @band.id() %>/edit" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button name="delete" class= "btn-btn-xs btn-danger">Delete Band</button>
+<% end %>
 
-</form>
-
-<br>
 
 <a href="/"><== Go Back</a>

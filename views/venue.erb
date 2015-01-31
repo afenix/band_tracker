@@ -1,0 +1,23 @@
+
+<form action="/venues" method="post" class="form-horizontal">
+  <div class="form-group">
+    <label for="venue">Enter a venue name:</label></b>
+    <input type="text" name="venue" placeholder="e.g. Red Rocks Amphitheatre">
+    <button name="button" class="btn-btn-sm-primary">Enter</button>
+  </div>
+</form>
+
+<h4>Here are the venues that you've added thus far:</h4>
+
+<% if @venues.any?() %>
+<ul>
+  <% @venues.each() do |venue| %>
+  <li><%= venue.name() %></li>
+  <% end %>
+</ul>
+<% else %>
+<p> You have not added a venue yet.</p>
+
+<% end %>
+
+<a href="/"><== Go Back</a>

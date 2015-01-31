@@ -1,28 +1,11 @@
+<h3>Welcome to the Band Tracker App!</h3>
+<p>How would you like to get started today?</p>
 
-<form id="form_id" action="/bands" method="post" class="form-horizontal">
-  <div class="form-group">
-    <label for="name">Enter a band name:</label></b>
-    <input type="text" name="name" placeholder="e.g. Pixies">
-    <button name="button" class="btn-btn-sm-primary">Enter</button>
-  </div>
-  <div class="form-group">
-    <label for="venue">Enter a venue name:</label></b>
-    <input type="text" name="venue" placeholder="e.g. Red Rocks Amphitheatre">
-    <button name="button" class="btn-btn-sm-primary">Enter</button>
-  </div>
+
+<form action='/bands' method='get'>
+  <button type="submit" class="btn btn-default">Add a band</button>
 </form>
-
 <br>
-
-<h4>Here are the bands that you've added thus far:</h4>
-
-<% if @bands.any?() %>
-<ul>
-  <% @bands.each() do |band| %>
-  <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
-  <% end %>
-</ul>
-<% else %>
-<p> You have not created a band yet. Get going</p>
-
-<% end %>
+<form action='/venues' method='get'>
+  <button type="submit" class="btn btn-default">Add a venue</button>
+</form>

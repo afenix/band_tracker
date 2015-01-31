@@ -1,0 +1,38 @@
+<h3>You've chosen to edit <strong><%= @band.name() %></strong></h3>
+<div class = "container">
+  <div class="row">
+    <div class="col-xs-6">
+      <form action="/bands/<%= @band.id() %>/edit" method="post" class="form-group">
+        <input type="hidden" name="_method" value="patch">
+        <label for="name">Edit the band name:</label>
+        <input name="name" type="text">
+        <button name="button" class="btn-btn-sm-primary">Edit</button>
+      </form>
+
+      <form  action="/bands/<%= @band.id() %>/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button name="delete" class= "btn-btn btn-danger">Delete Band</button>
+      </form>
+    </div>
+  </div>
+
+<br>
+<h3>Select which venue's <%= @band.name() %> has performed at: </h3>
+  <div class="row">
+    <div class="col-xs-10">
+      <form action="/add_venues" method="post" class="form-group">
+        <input type="hidden" name="_method" value="patch">
+        <input type="hidden" name="band_id" value="<%= @band.id() %>">
+        <% @venues.each do |venue| %>
+        <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>">  <%= venue.name() %>
+        <br>
+        <% end %>
+        <br>
+        <button action="submit" class="btn btn-sm btn-success">Add venues!</button>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+
+<a href="/"><== Go Back</a>
